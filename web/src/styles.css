@@ -208,3 +208,9 @@ select, input { background: var(--bg); border: 1px solid var(--border); border-r
 .field-row small { grid-column: 1 / -1; }
 .config-checks { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
 .check { display: flex; gap: 6px; align-items: center; }
+
+/* About dialog */
+.modal-body { max-height: 70vh; overflow-y: auto; }
+.modal-body h4 { margin: 14px 0 6px; font-size: 13px; }
+.about-links { margin: 6px 0 10px; padding-left: 18px; line-height: 1.5; }
+.about-links a { color: var(--accent, #2563eb); overflow-wrap: anywhere; }

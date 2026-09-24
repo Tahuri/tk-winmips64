@@ -7,6 +7,16 @@ Port web del simulador de pipeline MIPS64 **WinMIPS64** (Mike Scott), basado en 
 - **Frontend en React** (`web/`) con las 7 ventanas del original, más un editor integrado, en español e inglés.
 - **Servidor Go liviano** (`cmd/server/`): sirve la app, el `.wasm` y los programas de ejemplo.
 
+## Para qué existe
+
+Este repositorio existe para usarse en la materia **Arquitectura de Computadoras** de la Facultad de Informática de la Universidad Nacional de La Plata (UNLP). La materia usa WinMIPS64 para estudiar la ejecución segmentada (pipeline) y la programación en ensamblador MIPS64. Esta versión permite usar el simulador desde el navegador, en cualquier sistema operativo, sin instalar nada.
+
+**No es un sitio oficial de la cátedra.**
+
+- Sitio de la cátedra: <https://weblidi.info.unlp.edu.ar/catedras/arquitectura/>
+- Programa de la materia: <https://weblidi.info.unlp.edu.ar/catedras/arquitectura/?page=programa>
+- Estrebou, C. A.; Camele, G.; Quiroga, F. M.; Villagarcía Wanza, H. A. (2021). *Consolidación de conceptos de programación en lenguaje ensamblador a través de la creación de juegos y animaciones gráficas en el entorno de simulación WinMips64*. XVI Congreso de Tecnología en Educación & Educación en Tecnología (TE&ET 2021), La Plata. <http://sedici.unlp.edu.ar/handle/10915/122754>
+
 ## Levantarlo
 
 **Requisito:** Docker con Compose v2.

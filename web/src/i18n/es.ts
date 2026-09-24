@@ -188,6 +188,13 @@ export const es = {
   about: {
     title: 'Acerca de WinMIPS64',
     text: 'Port web de WinMIPS64 V1.60, distribuido bajo la Licencia Apache 2.0. Sin garantías de ningún tipo.',
+    courseTitle: 'Uso en la materia Arquitectura de Computadoras (UNLP)',
+    course: 'Este repositorio existe para usarse en la materia Arquitectura de Computadoras de la Facultad de Informática de la Universidad Nacional de La Plata (UNLP), que usa WinMIPS64 para estudiar la ejecución segmentada (pipeline) y la programación en ensamblador MIPS64. Permite usar el simulador desde el navegador, en cualquier sistema operativo, sin instalar nada. No es un sitio oficial de la cátedra.',
+    courseSite: 'Sitio de la cátedra de Arquitectura de Computadoras (Facultad de Informática, UNLP)',
+    courseProgram: 'Programa de la materia',
+    coursePaper: 'Estrebou, Camele, Quiroga y Villagarcía Wanza (2021): juegos y animaciones gráficas en WinMIPS64, TE&ET 2021 (SEDICI-UNLP)',
+    repo: 'código fuente de esta versión web',
+    creditsTitle: 'Créditos',
     credits: 'Basado en WinMIPS64 de Mike Scott (2003-2025) y en el fork con correcciones y traducción al español de Andoni Zubimendi (La Plata, Argentina).',
   },
 };

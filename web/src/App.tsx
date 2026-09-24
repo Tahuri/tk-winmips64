@@ -88,6 +88,15 @@ export function App() {
         <Modal title={t('about.title')} onClose={() => openDialog(null)} footer={<button className="primary" onClick={() => openDialog(null)}>{t('common.ok')}</button>}>
           <p><strong>WinMIPS64 V1.60</strong></p>
           <p>{t('about.text')}</p>
+          <h4>{t('about.courseTitle')}</h4>
+          <p>{t('about.course')}</p>
+          <ul className="about-links">
+            <li><a href="https://weblidi.info.unlp.edu.ar/catedras/arquitectura/" target="_blank" rel="noopener noreferrer">{t('about.courseSite')}</a></li>
+            <li><a href="https://weblidi.info.unlp.edu.ar/catedras/arquitectura/?page=programa" target="_blank" rel="noopener noreferrer">{t('about.courseProgram')}</a></li>
+            <li><a href="http://sedici.unlp.edu.ar/handle/10915/122754" target="_blank" rel="noopener noreferrer">{t('about.coursePaper')}</a></li>
+            <li><a href="https://github.com/Tahuri/tk-winmips64" target="_blank" rel="noopener noreferrer">Tahuri/tk-winmips64</a> — {t('about.repo')}</li>
+          </ul>
+          <h4>{t('about.creditsTitle')}</h4>
           <p>{t('about.credits')}</p>
           <ul className="about-links">
             <li><a href="https://github.com/mcarrickscott/WinMIPS64" target="_blank" rel="noopener noreferrer">mcarrickscott/WinMIPS64</a> — Mike Scott (Apache-2.0)</li>
