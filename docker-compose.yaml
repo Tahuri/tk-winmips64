@@ -1,0 +1,18 @@
+services:
+  winmips64:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tk-winmips64:latest
+    container_name: tk-winmips64
+    ports:
+      - "${WINMIPS64_PORT:-8080}:8080"
+    environment:
+      ADDR: ":8080"
+    # Mount your own .s programs to show them in the "Examples" menu:
+    # volumes:
+    #   - ./my-programs:/app/examples:ro
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped

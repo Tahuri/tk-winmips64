@@ -1,0 +1,10 @@
+.git
+**/node_modules
+web/dist
+web/public/wasm
+web/test-results
+web/playwright-report
+bin
+tools/oracle/build
+testdata/golden
+third_party
