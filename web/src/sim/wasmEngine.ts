@@ -43,12 +43,14 @@ interface GoInstance {
 export async function loadWasmEngine(base: string, timeoutMs = 5000): Promise<WasmEngine> {
   const g = globalThis as unknown as { Go?: new () => GoInstance; wmips?: Bridge };
   if (!g.Go) {
-    const js = await fetch(`${base}wasm/wasm_exec.js`);
-    const ct = js.headers.get('content-type') ?? '';
-    if (!js.ok || ct.includes('text/html')) throw new Error(`wasm_exec.js not found (${js.status})`);
-    const code = await js.text();
-    // Indirect eval: defines globalThis.Go (works in module workers, where importScripts is unavailable).
-    (0, eval)(code);
+    // wasm_exec.js is a side-effect script that defines globalThis.Go. A dynamic
+    // import works in module workers and keeps the CSP free of 'unsafe-eval'.
+    const url = new URL(`${base}wasm/wasm_exec.js`, self.location.href).href;
+    try {
+      await import(/* @vite-ignore */ url);
+    } catch (e) {
+      throw new Error(`wasm_exec.js not loaded: ${e instanceof Error ? e.message : String(e)}`);
+    }
     if (!g.Go) throw new Error('wasm_exec.js did not define Go');
   }
   const resp = await fetch(`${base}wasm/wmips.wasm`);
