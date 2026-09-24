@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 // Adapter over the Go WASM bridge (CONTRACT §5): global `wmips` whose functions return JSON strings.
 import type {
   Config, Engine, LoadResult, OkResult, Program, RunResult, Snapshot, StepResult,

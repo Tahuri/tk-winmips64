@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 /// <reference lib="webworker" />
 import { createHandler } from './handler';
 import type { Request } from './protocol';

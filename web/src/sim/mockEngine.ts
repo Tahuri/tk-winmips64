@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 // A deliberately trivial fake simulator that returns contract-shaped data (CONTRACT §4/§5).
 // It is used only when /wasm/wmips.wasm cannot be loaded or when ?mock=1 is set.
 //

@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 import { describe, expect, it } from 'vitest';
 import { es } from './es';
 import { en } from './en';

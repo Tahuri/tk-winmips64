@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 // Colours of the original WinMIPS64 (mytypes.h). They stay identical in light and dark themes.
 export const C = {
   yellow: '#ffff00',

@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 import { create } from 'zustand';
 import { SimClient } from '../sim/client';
 import { DEFAULT_CONFIG, CONFIG_LIMITS, type AsmError, type Config, type Message, type Program, type Snapshot } from '../sim/types';

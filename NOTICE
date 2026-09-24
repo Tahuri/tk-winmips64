@@ -1,0 +1,40 @@
+tk-winmips64
+Copyright 2026 tk-winmips64 contributors
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+-------------------------------------------------------------------------------
+Third-party work
+-------------------------------------------------------------------------------
+
+This product includes software derived from WinMIPS64, a MIPS64 pipeline
+simulator by Mike Scott.
+  Source:    https://github.com/mcarrickscott/WinMIPS64
+  Revision:  515d3469136fa57aac6b0742edb1bc3623a3d18c
+  License:   Apache License, Version 2.0
+  Notices:   Copyright (c) Mike Scott 2003
+             Copyright Aria Research (c) 1999,2000
+
+This product includes behaviour, bug fixes, user-interface strings (Spanish
+translation) and features derived from the WinMIPS64 fork by Andoni Zubimendi.
+  Source:    https://github.com/AndoniZubimendi/WinMIPS64
+  Revision:  322bb665ab6d42e5a6b4e57f61ab01b56ad7eeab
+  License:   no license file in that repository; it is a fork of the
+             Apache-2.0 work above. See README.md, section "Licencia".
+
+Example programs in testdata/programs/ and the documents in
+third_party/winmips64-mcarrick/doc/ come from the mcarrickscott/WinMIPS64
+repository (Apache License, Version 2.0).
+
+-------------------------------------------------------------------------------
+Modifications (Apache License 2.0, section 4(b))
+-------------------------------------------------------------------------------
+
+- core/, cmd/wasm/, cmd/wmips/: port of pipeline.cpp, utils.cpp, mytypes.h and
+  the non-UI logic of WinMIPS64Doc.cpp / IOView.cpp from C++/MFC to Go.
+- tools/oracle/: native (non-Windows) build of the original simulator core;
+  tools/oracle/src/ holds an adapted copy of the WinMIPS64Doc.cpp logic and
+  tools/oracle/shim/mytypes.h a copy with fixed-width integer typedefs.
+- web/: new React user interface that reproduces the original MFC windows.
+- third_party/: unmodified copies of both upstream repositories (compiled
+  binaries removed).

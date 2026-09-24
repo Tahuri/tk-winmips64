@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 // Open/save .s files: File System Access API when available, <input type=file> / download otherwise.
 
 interface FsFileHandle {
@@ -64,16 +67,33 @@ export async function saveSourceFile(name: string, text: string): Promise<string
 
 export interface ExampleInfo { name: string }
 
+const BASE: string = import.meta.env?.BASE_URL ?? '/';
+
+async function json(url: string): Promise<unknown> {
+  const r = await fetch(url, { headers: { accept: 'application/json' } });
+  if (!r.ok || !(r.headers.get('content-type') ?? '').includes('json')) throw new Error(`${url}: ${r.status}`);
+  return r.json();
+}
+
+/**
+ * Example programs: a static index generated at build time (works on GitHub
+ * Pages) with the Go server API as fallback.
+ */
 export async function fetchExamples(): Promise<ExampleInfo[]> {
-  const r = await fetch('/api/examples', { headers: { accept: 'application/json' } });
-  if (!r.ok || !(r.headers.get('content-type') ?? '').includes('json')) throw new Error(`examples: ${r.status}`);
-  const list = (await r.json()) as unknown;
+  let list: unknown;
+  try {
+    list = await json(`${BASE}examples/index.json`);
+  } catch {
+    list = await json('/api/examples');
+  }
   if (!Array.isArray(list)) throw new Error('examples: bad payload');
   return list.filter((x): x is ExampleInfo => typeof x?.name === 'string');
 }
 
 export async function fetchExample(name: string): Promise<string> {
-  const r = await fetch(`/api/examples/${encodeURIComponent(name)}`);
+  const file = encodeURIComponent(name);
+  let r = await fetch(`${BASE}examples/${file}`);
+  if (!r.ok || (r.headers.get('content-type') ?? '').includes('text/html')) r = await fetch(`/api/examples/${file}`);
   if (!r.ok) throw new Error(`example ${name}: ${r.status}`);
   return r.text();
 }

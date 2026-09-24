@@ -7,3 +7,6 @@ tools/oracle/build/
 .DS_Store
 web/test-results/
 web/playwright-report/
+web/public/examples/
+web/public/LICENSE
+web/public/NOTICE

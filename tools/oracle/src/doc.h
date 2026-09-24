@@ -1,3 +1,13 @@
+/*
+ * Copyright 2026 tk-winmips64 contributors
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Derived from WinMIPS64 by Mike Scott (Apache-2.0,
+ * https://github.com/mcarrickscott/WinMIPS64) and the fork by Andoni
+ * Zubimendi (https://github.com/AndoniZubimendi/WinMIPS64).
+ * Modified: adapted to build outside Windows/MFC as a trace oracle. See NOTICE.
+ */
+
 // ORACLE: non-UI subset of CWinMIPS64Doc (third_party/winmips64-andoni/src/WinMIPS64Doc.h).
 // Member names and types are kept identical to the original so that doc.cpp can
 // stay a near-verbatim copy of WinMIPS64Doc.cpp.

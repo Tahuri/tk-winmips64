@@ -1,3 +1,13 @@
+/*
+ * Copyright 2026 tk-winmips64 contributors
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Derived from WinMIPS64 by Mike Scott (Apache-2.0,
+ * https://github.com/mcarrickscott/WinMIPS64) and the fork by Andoni
+ * Zubimendi (https://github.com/AndoniZubimendi/WinMIPS64).
+ * Modified: adapted to build outside Windows/MFC as a trace oracle. See NOTICE.
+ */
+
 // ORACLE driver: assembles a program with the original WinMIPS64 assembler,
 // runs it cycle by cycle with the original pipeline, and prints the golden
 // trace defined in docs/CONTRACT.md section 1.

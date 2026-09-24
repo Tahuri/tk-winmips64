@@ -1,3 +1,13 @@
+/*
+ * Copyright 2026 tk-winmips64 contributors
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Derived from WinMIPS64 by Mike Scott (Apache-2.0,
+ * https://github.com/mcarrickscott/WinMIPS64) and the fork by Andoni
+ * Zubimendi (https://github.com/AndoniZubimendi/WinMIPS64).
+ * Modified: unmodified upstream copy with fixed-width integer typedefs (WORD32/SIGNED32/WORD64/SIGNED64). See NOTICE.
+ */
+
 #pragma once
 // ORACLE: copy of third_party/winmips64-andoni/src/mytypes.h (LF line endings).
 // Only the four integer typedefs below are patched (marked ORACLE PATCH) so that

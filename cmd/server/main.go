@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 // Command server serves the WinMIPS64 web frontend, the WASM simulator and
 // the example programs. It does not run simulations: the core runs in the
 // browser as WebAssembly.

@@ -20,6 +20,8 @@ WORKDIR /src/web
 COPY web/package.json web/package-lock.json ./
 RUN npm ci --no-audit --no-fund
 COPY web ./
+COPY testdata/programs /src/testdata/programs
+COPY LICENSE NOTICE /src/
 COPY --from=go /out/wasm ./public/wasm
 RUN npm run build \
  && find dist -type f \( -name '*.wasm' -o -name '*.js' -o -name '*.css' \) -exec gzip -9 -k {} \;
@@ -31,6 +33,7 @@ COPY --from=go /out/server /app/server
 COPY --from=go /out/wmips /app/wmips
 COPY --from=web /src/web/dist /app/web
 COPY testdata/programs /app/examples
+COPY LICENSE NOTICE /app/
 ENV ADDR=:8080 STATIC_DIR=/app/web EXAMPLES_DIR=/app/examples
 EXPOSE 8080
 HEALTHCHECK --interval=15s --timeout=3s --start-period=5s --retries=3 CMD ["/app/server", "healthcheck"]

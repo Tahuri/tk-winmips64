@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 // Hex / number formatting helpers. 64-bit values travel as 16-hex-digit strings.
 
 const MASK64 = (1n << 64n) - 1n;

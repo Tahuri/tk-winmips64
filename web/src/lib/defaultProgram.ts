@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 export const DEFAULT_FILE_NAME = 'sum.s';
 
 export const DEFAULT_PROGRAM = `; WinMIPS64 - sums an array, does some FP math and prints the sum

@@ -1,10 +1,13 @@
 {
   "name": "winmips64-web",
   "private": true,
+  "license": "Apache-2.0",
   "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/gen-examples.mjs",
+    "predev": "node scripts/gen-examples.mjs",
     "build": "tsc --noEmit -p tsconfig.json && vite build",
     "preview": "vite preview",
     "lint": "tsc --noEmit -p tsconfig.json",

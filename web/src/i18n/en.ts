@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 import type { Resources } from './es';
 
 // English strings (based on the WinMIPS64 resources by Mike Scott).
@@ -186,6 +189,7 @@ export const en: Resources = {
   common: { ok: 'OK', cancel: 'Cancel', close: 'Close' },
   about: {
     title: 'About WinMIPS64',
-    text: 'Web port of WinMIPS64 V1.60. Mike Scott 2003-2013 (Dublin, Ireland). Andoni Zubimendi 2014-2020 (La Plata, Argentina). Apache 2.0 licence.',
+    text: 'Web port of WinMIPS64 V1.60, distributed under the Apache License 2.0. Provided without warranty of any kind.',
+    credits: 'Based on WinMIPS64 by Mike Scott (2003-2025) and on the fork with bug fixes and Spanish translation by Andoni Zubimendi (La Plata, Argentina).',
   },
 };

@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 // Request dispatcher shared by the Web Worker and the in-process transport used in tests.
 import { MockEngine } from './mockEngine';
 import type { BootOptions, BootResult, Request, Response } from './protocol';

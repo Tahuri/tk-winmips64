@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 // Mirrors docs/CONTRACT.md §2–§5. 64-bit values travel as 16-hex-digit strings.
 
 export interface Config {

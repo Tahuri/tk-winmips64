@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 // Typed, promise-based client for the simulator worker.
 import type { Method, Request, Response, WorkerApi } from './protocol';
 import type { RunResult } from './types';

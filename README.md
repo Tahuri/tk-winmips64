@@ -69,7 +69,43 @@ third_party/     código fuente de los dos repos upstream (referencia)
 docs/CONTRACT.md contratos entre componentes (traza, API, JSON, bridge)
 ```
 
+## Publicar en GitHub Pages
+
+El simulador corre entero en el navegador, así que el sitio es 100 % estático. El workflow `.github/workflows/pages.yml` compila el WASM y la web, y publica `web/dist`.
+
+1. Subí el repo a GitHub. En el plan gratuito de GitHub Pages, el repo tiene que ser público.
+2. Abrí **Settings → Pages → Build and deployment** y elegí **Source: GitHub Actions**.
+3. Hacé push a `main`, o corré el workflow **pages** a mano.
+4. Abrí `https://<usuario>.github.io/<repo>/`.
+
+**Diferencias con la versión Docker:**
+- GitHub Pages no permite headers propios. La CSP va en un `<meta>` de `web/index.html`; `X-Frame-Options` no se puede aplicar.
+- Los ejemplos salen de `examples/index.json`, que se genera en el build desde `testdata/programs/`. No hay volumen para agregar programas: commitealos en `testdata/programs/`.
+- Revisá si GitHub Pages comprime el `.wasm` (3,6 MB sin comprimir):
+  `curl -sI -H 'Accept-Encoding: gzip' https://<usuario>.github.io/<repo>/wasm/wmips.wasm | grep -i content-encoding`
+
+Para probar localmente con la misma ruta base:
+
+```bash
+make wasm
+cd web && VITE_BASE=/tk-winmips64/ npm run build
+npx vite preview --base /tk-winmips64/ --port 4174
+E2E_BASE_URL=http://localhost:4174/tk-winmips64/ npx playwright test -c playwright.docker.config.ts
+```
+
 ## Licencia
 
-- El WinMIPS64 original de Mike Scott tiene licencia **Apache 2.0** (ver `LICENSE`).
-- **Advertencia:** el fork de Andoni Zubimendi (`third_party/winmips64-andoni`) **no declara licencia**. Este port reproduce su comportamiento (bug fixes, traducción al español, registros como números). Antes de publicarlo o distribuirlo, pedile a su autor una licencia explícita.
+tk-winmips64 se distribuye bajo la **Licencia Apache 2.0** (`LICENSE`). Las atribuciones requeridas están en `NOTICE`, que se publica junto con el sitio (`/NOTICE`) y con la imagen Docker (`/app/NOTICE`).
+
+| Fuente | Qué se usa | Licencia |
+|---|---|---|
+| [mcarrickscott/WinMIPS64](https://github.com/mcarrickscott/WinMIPS64), de Mike Scott | Simulador original, programas de ejemplo, documentación | Apache 2.0 |
+| [AndoniZubimendi/WinMIPS64](https://github.com/AndoniZubimendi/WinMIPS64), de Andoni Zubimendi | Bug fixes, traducción al español, "registros como números", CONTROL=4 | **No declara licencia** |
+
+Cómo se cumple Apache 2.0:
+- Se incluye una copia de la licencia (`LICENSE`) y los avisos de copyright del original (`NOTICE`).
+- Cada archivo derivado indica su origen y que fue modificado. Ver los encabezados de `core/*.go` y `tools/oracle/src/*`. El resto de los archivos llevan `SPDX-License-Identifier: Apache-2.0`.
+- `third_party/` conserva copias sin modificar de los dos repos, con el commit exacto (`third_party/README.md`).
+- El diálogo **Ayuda → Acerca de** muestra los créditos y los links a las dos fuentes.
+
+**Advertencia:** poner la licencia Apache a este repo **no cambia la licencia de los aportes de Andoni Zubimendi**. Su fork no tiene archivo de licencia, y sin permiso explícito sus cambios siguen siendo suyos. Antes de hacer público el repo o el sitio, pedile que agregue una licencia Apache 2.0 a su fork, o que dé permiso por escrito. La alternativa es reimplementar sus correcciones sin usar su código ni sus textos.

@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 export const ABI_NAMES = [
   'zero', 'at', 'v0', 'v1', 'a0', 'a1', 'a2', 'a3',
   't0', 't1', 't2', 't3', 't4', 't5', 't6', 't7',

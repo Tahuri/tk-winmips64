@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 // Spanish strings (based on the WinMIPS64 v1.60 Spanish resources by Andoni Zubimendi).
 export const es = {
   app: { title: 'WinMIPS64 Web', subtitle: 'Simulador del pipeline MIPS64' },
@@ -184,7 +187,8 @@ export const es = {
   common: { ok: 'Aceptar', cancel: 'Cancelar', close: 'Cerrar' },
   about: {
     title: 'Acerca de WinMIPS64',
-    text: 'Port web de WinMIPS64 V1.60. Mike Scott 2003-2013 (Dublín, Irlanda). Andoni Zubimendi 2014-2020 (La Plata, Argentina). Licencia Apache 2.0.',
+    text: 'Port web de WinMIPS64 V1.60, distribuido bajo la Licencia Apache 2.0. Sin garantías de ningún tipo.',
+    credits: 'Basado en WinMIPS64 de Mike Scott (2003-2025) y en el fork con correcciones y traducción al español de Andoni Zubimendi (La Plata, Argentina).',
   },
 };
 

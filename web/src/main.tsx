@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import 'dockview-react/dist/styles/dockview.css';

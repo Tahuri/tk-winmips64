@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 import { useTranslation } from 'react-i18next';
 import { useSim } from '../state/store';
 import { formatCpi } from '../lib/format';

@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 import { create } from 'zustand';
 import type { EditRequest } from '../components/EditValueDialog';
 import { storage } from '../lib/storage';

@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 import { useEffect, useRef, type ReactNode } from 'react';
 
 export function Modal(props: { title: string; onClose: () => void; children: ReactNode; footer?: ReactNode; testId?: string }) {

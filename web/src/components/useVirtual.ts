@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 import { useCallback, useEffect, useState, type RefObject } from 'react';
 
 /** Minimal fixed-size virtualisation: tracks scroll position and viewport size of a scroller. */

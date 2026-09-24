@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MenuBar } from './components/MenuBar';
@@ -85,6 +88,12 @@ export function App() {
         <Modal title={t('about.title')} onClose={() => openDialog(null)} footer={<button className="primary" onClick={() => openDialog(null)}>{t('common.ok')}</button>}>
           <p><strong>WinMIPS64 V1.60</strong></p>
           <p>{t('about.text')}</p>
+          <p>{t('about.credits')}</p>
+          <ul className="about-links">
+            <li><a href="https://github.com/mcarrickscott/WinMIPS64" target="_blank" rel="noopener noreferrer">mcarrickscott/WinMIPS64</a> — Mike Scott (Apache-2.0)</li>
+            <li><a href="https://github.com/AndoniZubimendi/WinMIPS64" target="_blank" rel="noopener noreferrer">AndoniZubimendi/WinMIPS64</a> — Andoni Zubimendi</li>
+            <li><a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener noreferrer">Apache License 2.0</a></li>
+          </ul>
         </Modal>
       )}
       {edit && <EditValueDialog req={edit} onClose={() => openEdit(null)} />}

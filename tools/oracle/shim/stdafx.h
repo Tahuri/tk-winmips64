@@ -1,3 +1,13 @@
+/*
+ * Copyright 2026 tk-winmips64 contributors
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Derived from WinMIPS64 by Mike Scott (Apache-2.0,
+ * https://github.com/mcarrickscott/WinMIPS64) and the fork by Andoni
+ * Zubimendi (https://github.com/AndoniZubimendi/WinMIPS64).
+ * Modified: adapted to build outside Windows/MFC as a trace oracle. See NOTICE.
+ */
+
 // ORACLE shim: replaces the MFC precompiled header (StdAfx.h) of WinMIPS64.
 //
 // It provides just enough of the Win32/MFC/MSVC-CRT surface for the upstream

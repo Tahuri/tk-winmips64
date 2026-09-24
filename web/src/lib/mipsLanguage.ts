@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 import { StreamLanguage, type StreamParser } from '@codemirror/language';
 
 const REG = /^(\$?(r([0-9]|[12][0-9]|3[01])|f([0-9]|[12][0-9]|3[01])|zero|at|v[01]|a[0-3]|t[0-9]|s[0-7]|k[01]|gp|sp|fp|ra))\b/i;

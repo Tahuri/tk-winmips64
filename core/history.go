@@ -1,3 +1,11 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+//
+// Derived from WinMIPS64 by Mike Scott (Apache-2.0,
+// https://github.com/mcarrickscott/WinMIPS64) and the fork by Andoni
+// Zubimendi (https://github.com/AndoniZubimendi/WinMIPS64).
+// Modified: ported from C++/MFC to Go. See NOTICE.
+
 package core
 
 // Pipeline history ("Cycles" window). The original keeps

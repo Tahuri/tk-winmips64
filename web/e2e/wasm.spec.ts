@@ -1,3 +1,6 @@
+// Copyright 2026 tk-winmips64 contributors
+// SPDX-License-Identifier: Apache-2.0
+
 import { expect, test } from '@playwright/test';
 
 // Real Go/WASM engine against a running container (docker compose up -d):
@@ -17,7 +20,8 @@ test('real engine: assemble, step, run to halt, no CSP errors', async ({ page })
       /* ignore */
     }
   });
-  await page.goto('/');
+  // Relative URL so the spec also works under a base path (GitHub Pages project site).
+  await page.goto('./');
   await expect(page.getByTestId('engine-kind')).toHaveText('wasm', { timeout: 20_000 });
 
   await page.getByTestId('assemble').click();
@@ -37,4 +41,11 @@ test('real engine: assemble, step, run to halt, no CSP errors', async ({ page })
   expect(newest).toBeGreaterThan(40);
   await page.screenshot({ path: 'test-results/wasm-after-run.png', fullPage: true });
   expect(problems, problems.join('\n')).toEqual([]);
+});
+
+test('example programs are listed and loadable', async ({ request }) => {
+  const list = await request.get('examples/index.json').then((r) => r.json());
+  expect(list.length).toBeGreaterThan(30);
+  const src = await request.get(`examples/${list[0].name}`).then((r) => r.text());
+  expect(src.length).toBeGreaterThan(10);
 });
