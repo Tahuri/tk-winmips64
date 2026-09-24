@@ -1,0 +1,7 @@
+node_modules/
+web/dist/
+web/public/wasm/
+bin/
+tools/oracle/build/
+*.test
+.DS_Store

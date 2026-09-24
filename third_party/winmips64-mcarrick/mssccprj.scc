@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[WinAsm.dsp]
+SCC_Aux_Path = "H:\VSS"
+SCC_Project_Name = "$/ESIM/WinEsim", JKAAAAAA
+
+[WinEsim.dsp]
+SCC_Aux_Path = "H:\VSS"
+SCC_Project_Name = "$/ESIM/WinEsim", JKAAAAAA
