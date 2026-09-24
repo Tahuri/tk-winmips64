@@ -12,6 +12,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const src = join(here, '..', '..', 'testdata', 'programs');
 const out = join(here, '..', 'public', 'examples');
 
+mkdirSync(join(here, '..', 'public'), { recursive: true });
 for (const f of ['LICENSE', 'NOTICE']) {
   const p = join(here, '..', '..', f);
   if (existsSync(p)) copyFileSync(p, join(here, '..', 'public', f));
