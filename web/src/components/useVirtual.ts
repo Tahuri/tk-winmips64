@@ -8,8 +8,13 @@ export function useScrollBox(ref: RefObject<HTMLElement | null>) {
     if (!el) return;
     setBox({ top: el.scrollTop, left: el.scrollLeft, width: el.clientWidth || 800, height: el.clientHeight || 600 });
   }, [ref]);
+  // The scroller may mount after the hook (panels render an "empty" placeholder
+  // first), so re-attach whenever the underlying element changes.
+  const [el, setEl] = useState<HTMLElement | null>(null);
   useEffect(() => {
-    const el = ref.current;
+    if (ref.current !== el) setEl(ref.current);
+  });
+  useEffect(() => {
     if (!el) return;
     update();
     el.addEventListener('scroll', update, { passive: true });
@@ -19,7 +24,7 @@ export function useScrollBox(ref: RefObject<HTMLElement | null>) {
       el.removeEventListener('scroll', update);
       ro?.disconnect();
     };
-  }, [ref, update]);
+  }, [el, update]);
   return box;
 }
 

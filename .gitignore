@@ -5,3 +5,5 @@ bin/
 tools/oracle/build/
 *.test
 .DS_Store
+web/test-results/
+web/playwright-report/
